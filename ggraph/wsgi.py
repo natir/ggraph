@@ -1,4 +1,4 @@
-from ggraph.application import app
+# from __init__ import app
 
 def runner():
     print(app)

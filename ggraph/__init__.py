@@ -1,3 +1,3 @@
 
-from application import app
+from ggraph.application import app
 __version__ = "0.0.1"

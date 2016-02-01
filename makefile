@@ -2,4 +2,4 @@
 PORT = 8080
 
 all:
-	python -m ggraph ${PORT} True
+	PYTHONPATH="." python ggraph 8080 True
