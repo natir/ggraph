@@ -14,7 +14,7 @@ git clone http://gogs.pierre.marjon.fr/natir/ggraph.git
 pip install -r requirement.txt
 
 # For test only
-make run [port number]
+make run PORT=[port number default 8080]
 ```
 
 ## Usage
