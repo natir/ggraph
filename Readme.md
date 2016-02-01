@@ -10,7 +10,7 @@ web service for generate svg with graphviz information
 
 	git clone http://gogs.pierre.marjon.fr/natir/ggraph.git
 
-	pip install -r requirement.txt
+	pip install -r requirements.txt
 
 For test instalation you can run :
 
