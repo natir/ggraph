@@ -55,7 +55,7 @@ For run ggraph in production you can use this configuration file.
 	User=youruser
 	Group=yourgroup
 	Environement="PATH=/path/to/ggraph/env/bin"
-	ExecStart=/path/to/ggraph/env/bin/gunicorn --workers 3 -bind unix:ggraph.sock -m 007 wsgi
+	ExecStart=/path/to/ggraph/env/bin/gunicorn --workers 3 -bind unix:ggraph.sock -m 007 wsgi:runner
 	Restart=always
 
 	[Install]
