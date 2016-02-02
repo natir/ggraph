@@ -9,7 +9,7 @@ web service for generate image with graphviz dot language
 
 ## Instalation
 
-	git clone http://gogs.pierre.marjon.fr/natir/ggraph.git
+	git clone https://github.com/natir/ggraph.git
 
 	pip install -r requirements.txt
 
