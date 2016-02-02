@@ -5,6 +5,7 @@ web service for generate svg with graphviz information
 ## Requirement
 
 * python >= 3.4
+* graphviz
 
 ## Instalation
 
@@ -56,7 +57,7 @@ For run ggraph in production you can use this configuration file.
 	Group=yourgroup
 	WorkingDirectory=/path/to/ggraph
 	Environement="PATH=/path/to/ggraph/env/bin"
-	ExecStart=/path/to/ggraph/env/bin/gunicorn --workers 3 -bind unix:ggraph.sock -m 007 ggraph.application:app
+	ExecStart=/path/to/ggraph/env/bin/gunicorn --workers 3 -bind unix:ggraph.sock -m 007 ggraph:app
 	Restart=always
 
 	[Install]

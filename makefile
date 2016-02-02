@@ -2,4 +2,4 @@
 PORT = 8080
 
 all:
-	PYTHONPATH="." python ggraph 8080 True
+	python run.py 8080 True
