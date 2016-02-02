@@ -1,6 +1,6 @@
 # GGraph
 
-web service for generate svg with graphviz information
+web service for generate image with graphviz dot language
 
 ## Requirement
 
@@ -26,20 +26,32 @@ You can try some exemple url :
 
 * [node a to b](http://ggraph.pierre.marijon.fr/dot/svg/digraph{a->b;})
 * [node a to b png version](http://ggraph.pierre.marijon.fr/dot/png/digraph{a->b;})
-* [some complex graph](http://ggraph.pierre.marijon.fr/dot/svg/digraph{
+* [complex graph](http://ggraph.pierre.marijon.fr/dot/svg/digraph{
     fontname = "Bitstream Vera Sans";
     fontsize = 8;
     node [fontname = "Bitstream Vera Sans";fontsize = 8;shape = "record";];
     edge [fontname = "Bitstream Vera Sans";fontsize = 8;];
-    Sequence [label = "{Sequence|+data:string\\l+comment:string\\l|+gc\(\):float}"];
-    Genome [label = "{Genome|+seqs:Sequence[]\\l+annotation:Annotation\\l}"];
+    Sequence [label = "{Sequence | +data : string \\l +comment : string \\l| + gc\(\) : float}"];
+    Genome [label = "{Genome | +seqs : Sequence[] \\l +annotation : Annotation \\l}"];
     Sequence -> Genome;
 })
 
+In markdown you need escape \, ( and ) charactere with \, exemple :
+
+	[complex graph](http://ggraph.pierre.marijon.fr/dot/svg/digraph{
+	fontname = "Bitstream Vera Sans";
+	fontsize = 8;
+	node [fontname = "Bitstream Vera Sans";fontsize = 8;shape = "record";];
+	edge [fontname = "Bitstream Vera Sans";fontsize = 8;];
+	Sequence [label = "{Sequence | +data : string \\l +comment : string \\l | +gc\(\) : float}"];
+	Genome [label = "{Genome | +seqs:Sequence[] \\l +annotation:Annotation}"];
+	Sequence -> Genome;
+	})
+
 The list of avaible:
 
-* [engine](http://ggraph.pierre.marijon.fr/engine)
-* [output format](http://ggraph.pierre.marijon.fr/format)
+* [engine](http://ggraph.pierre.marijon.fr/engine) in json format
+* [output format](http://ggraph.pierre.marijon.fr/format) in json format
 
 ## Production setup
 
@@ -68,7 +80,6 @@ For run ggraph in production you can use this configuration file.
 	server
 	{
 		listen 80;
-		listen 443 ssl;
 
 	    server_name ggraph.hostname;
 

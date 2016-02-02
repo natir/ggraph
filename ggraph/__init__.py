@@ -11,7 +11,7 @@ import mimetypes
 import logging
 
 # flask import
-from flask import Flask, send_file
+from flask import Flask, send_file, jsonify
 
 # graphviz import
 from graphviz import Source
@@ -50,11 +50,11 @@ def generate(engine, outformat, graphviz_code):
 
 @app.route('/engine')
 def get_list_of_engine():
-    return ", ".join(ENGINES)
+    return jsonify(**{"engine": list(ENGINES)})
 
 @app.route('/format')
 def get_format():
-    return ", ".join(FORMATS)
+    return jsonify(**{"fromat": list(FORMATS)})
 
 @app.route('/')
 def index():
