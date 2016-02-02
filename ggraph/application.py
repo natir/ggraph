@@ -1,3 +1,5 @@
+# std import
+import sys
 import io
 import mimetypes
 import logging
@@ -20,7 +22,7 @@ app = Flask(__name__)
 def setup_logging():
     if not app.debug:
         # production mode
-        app.logger.addHandler(logging.SysLogHandler())
+        app.logger.addHandler(logging.StreamHandler(sys.stderr))
         app.logger.setLevel(logging.INFO)
     else:
         # debug mode
@@ -30,6 +32,8 @@ def setup_logging():
 @app.route('/<engine>/<outformat>/<graphviz_code>')
 def generate(engine, outformat, graphviz_code):
     src = Source(graphviz_code, engine=engine, format=outformat)
+
+    app.logger.info("/".join(("request is ", engine, outformat, graphviz_code)))
 
     fb = io.BytesIO(src.pipe())
 
